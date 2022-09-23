@@ -1,0 +1,90 @@
+*{
+    font-family:arial;
+}
+
+body {
+    height: 100vh;
+    width: 100%;
+    margin: 0;
+    background:grey;
+    display:flex;
+    justify-content:center;
+    margin-top:5%;
+}
+
+.navbar {
+    margin:0;
+    padding:0;
+    text-align:center;
+    background-color:white;
+    border:2px solid black;
+    margin-bottom: 5px;
+    border-radius:10px;
+}
+
+
+.book-window {
+    border:2px solid black;
+    border-radius:10px;
+    width:50vw;
+    height:50%;
+    background-color:white;
+    justify-content:center;
+}
+
+.add-library {
+    
+
+}
+
+.book-shelf {
+    list-style-type:none;
+    width:100%;
+    border:2px solid green;
+    height: 100%;
+    display:flex;
+   
+    
+}
+
+.book-list{
+  display:inline;
+  margin:10px;
+}
+
+
+
+
+
+
+/* BOOK SECTION */ 
+
+.book-block {
+    border: 2px solid red;
+    height:30%;
+    width:100%;
+    margin:10px;
+
+}
+
+.title {
+   
+    font-weight:bold;
+}
+
+.author {
+    
+}
+
+.numPages{
+   
+}
+
+/* Build a checkmark in read status */ 
+
+.read-status {
+
+
+
+
+}
