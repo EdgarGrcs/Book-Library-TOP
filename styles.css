@@ -52,18 +52,13 @@ body {
   margin:10px;
 }
 
-
-
-
-
-
 /* BOOK SECTION */ 
 
 .book-block {
     border: 2px solid red;
     height:30%;
-    width:100%;
-    margin:10px;
+    width:50%;
+   
 
 }
 
