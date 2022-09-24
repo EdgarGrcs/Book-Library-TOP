@@ -15,12 +15,14 @@
      </div>   
        <div class="book-window">
         
-        <Button class="add-library">
-            Add a book to the library
-        </Button>
-        <ul class="book-shelf">
-            <li class="book-list">
-                <div class="book-block">
+      
+       
+       <!-- Remove ul and li and instead replace with divs, make them
+        overflow to another row if there are too many on the first one-->
+       
+        <div class = "book-shelf">
+               
+            <div class="book-block">
                     <div class="title">
                         Lord of the Rings
                     </div>
@@ -40,9 +42,11 @@
                         Remove from library
                     </button>
                 </div>
-            </li>
-            
-        </ul>
+                
+            </div>
+            <button class = "add-div">
+                Add Book
+            </button>
        </div>
 
     </div>

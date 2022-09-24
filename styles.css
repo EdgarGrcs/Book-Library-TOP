@@ -28,7 +28,7 @@ body {
     border-radius:10px;
     width:50vw;
     height:50%;
-    background-color:white;
+    background-color:blueviolet;
     justify-content:center;
 }
 
@@ -43,43 +43,89 @@ body {
     border:2px solid green;
     height: 100%;
     display:flex;
-   
-    
+
 }
 
-.book-list{
-  display:inline;
-  margin:10px;
-}
 
 /* BOOK SECTION */ 
 
 .book-block {
     border: 2px solid red;
     height:30%;
-    width:50%;
-   
-
+    width:20%;
+    background-color:grey;
+    border-radius:10px;
+    margin: 5px;
+    flex-wrap:wrap;
+    display:inline;
 }
 
 .title {
-   
     font-weight:bold;
+    justify-content:center;
+    align-items:center;
+    background-color:white;
+    border-radius:10px;
+    margin: 5px;
+    display:flex;
 }
 
 .author {
-    
+    font-weight:bold;
+    justify-content:center;
+    align-items:center;
+    background-color:white;
+    border-radius:10px;
+    margin: 5px;
+    display:flex;
+
 }
 
 .numPages{
-   
+    font-weight:bold;
+    justify-content:center;
+    align-items:center;
+    background-color:white;
+    border-radius:10px;
+    margin: 5px;
+    display:flex;
 }
 
 /* Build a checkmark in read status */ 
 
 .read-status {
+    font-weight:bold;
+    justify-content:center;
+    align-items:center;
+    background-color:white;
+    border-radius:10px;
+    margin: 5px;
+    display:flex;
+}
 
+.status {
+    font-weight:bold;
+    justify-content:center;
+    align-items:center;
+    background-color:white;
+    border-radius:10px;
+    margin: 5px;
+    display:flex;
+}
+.remove-button{
+    font-weight:bold;
+    justify-content:center;
+    align-items:center;
+    background-color:white;
+    border-radius:10px;
+    margin: 5px;
+    display:flex;
+}
 
-
-
+.add-div{
+    
+    width:50%;
+    font-size:50px;
+    font-weight:bold;
+    
 }
