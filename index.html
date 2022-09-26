@@ -15,11 +15,6 @@
      </div>   
        <div class="book-window">
         
-      
-       
-       <!-- Remove ul and li and instead replace with divs, make them
-        overflow to another row if there are too many on the first one-->
-       
         <div class = "book-shelf">
                
             <div class="book-block">
@@ -44,9 +39,38 @@
                 </div>
                 
             </div>
-            <button class = "add-div">
-                Add Book
+            <button id = "add-div">
+                Add book
             </button>
+            
+            <div id="myModal" class="modal">
+
+                <div class="modal-content">
+                    <div class="modal-header">
+                      <span class="close">&times;</span>
+                      <h2>Modal Header</h2>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <label for="title">Title:</label><br>
+                            <input type="text" id="title" name="title" value="Book Title"><br>
+                            <label for="author">Author:</label><br>
+                            <input type="text" id="author" name="lname" value="Author"><br>
+                            <label for="numPages">Number of Pages:</label><br>
+                            <input type="number" id="numPages" name="numPages"><br>
+                            <label for="status">Have you finished the book?</label><br>
+                            <input type="checkbox" id="status" name="status"><br><br>
+                            <input type="submit">
+                          </form>
+                    </div>
+                    <div class="modal-footer">
+                      <h3>Modal Footer</h3>
+                    </div>
+                  </div>
+            </div>
+
+
+
        </div>
 
     </div>

@@ -1,9 +1,3 @@
-// add Function that takes user input on book,
-// and creates an object which it then inserts into array
-// write function that loops through array and displays each book on the page
-
-
-
 
 /**
  * To Do:
@@ -16,8 +10,7 @@ const book1 = new Book("Deep Work","Cal Newport",221,false);
 const book2 = new Book("Models","Mark Manson",190,true);
 const book3 = new Book("Total recall","Arnold Schwarzenegger",455,true);
 
-
-const myLibrary = [];
+let myLibrary = [];
 
 function Book(title,author,numberPages,status){
     this.title = title
@@ -27,9 +20,14 @@ function Book(title,author,numberPages,status){
 }
 
 
+
+
 function addBookToLibrary(bookObject) {
-myLibrary.push(bookObject);
-}
+    myLibrary.push(bookObject);
+ }
+
+
+
 
 
 // This function loops through an array which stores book objects and
@@ -38,9 +36,6 @@ myLibrary.push(bookObject);
 function loopArray(array){
 
     const bookShelfDiv = document.querySelector(".book-shelf"); 
-
-
-   
     let i = 0;
     while (i < array.length){
        
@@ -52,7 +47,6 @@ function loopArray(array){
         const readButton = document.createElement("button");
         const removeButton = document.createElement("button");
         
-        
         div.classList.add("book-block");
         titleDiv.classList.add("title");
         authorDiv.classList.add("author");
@@ -60,16 +54,15 @@ function loopArray(array){
         statusDiv.classList.add("read-status");
         readButton.classList.add("status");
         removeButton.classList.add("remove-button");
+        removeButton.onclick = removeBook;
 
         titleDiv.textContent = array[i].title;
         authorDiv.textContent = array[i].author;
         numPagesDiv.textContent = array[i].numberPages;
         statusDiv.textContent = (array[i].status === false ? "not read" : "read");
         readButton.textContent = "READ/UNREAD";
-        removeButton.textContent = "Remove from library";
+        removeButton.textContent = "Remove";
      
-      
-      
         div.appendChild(titleDiv);
         div.appendChild(authorDiv);
         div.appendChild(numPagesDiv);
@@ -82,10 +75,68 @@ function loopArray(array){
 
 }
 
+
+function removeBook(title){
+    myLibrary = myLibrary.filter( (title) => title.title !== title );
+    loopArray(myLibrary);
+}
+
+
+
+// Get the modal
+var modal = document.getElementById("myModal");
+
+// Get the button that opens the modal
+var btn = document.getElementById("add-div");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on the button, open the modal
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+
+
+const form = document.querySelector("form");
+
+
+form.onclick = function(){
+    
+
+    const title = document.getElementById("title").value;
+    const author = document.getElementById("author").value
+    const numPages = document.getElementById("numPages").value
+    const status = document.getElementById("status");
+
+    const book = new Book(title,author,numPages,status.checked ? true : false);
+    modal.style.display = "none";
+    myLibrary.push(book);
+    loopArray(myLibrary);
+
+}
+
+
+
 addBookToLibrary(book1);
 addBookToLibrary(book2);
 addBookToLibrary(book3);
+
+
 loopArray(myLibrary);
+
 
 
 
