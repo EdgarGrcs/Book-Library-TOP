@@ -5,73 +5,125 @@
 body {
     height: 100vh;
     width: 100%;
-    margin: 0;
-    background:grey;
-    display:flex;
-    justify-content:center;
-    margin-top:5%;
 }
+
+.navbarWindow{
+  display:flex;
+  margin:1%;
+}
+
+.secondNavbar{
+  
+  height: 5vh;
+  text-align:center;
+  width:80vw;
+  background-color: #00d4ff;
+  border:2px solid black;
+  border-radius:10px;
+  font-weight:bold;
+  align-items: center;
+  display:flex;
+  color:white;
+  justify-content:center;
+  font-size:20px;
+  margin:1%;
+  
+}
+
 
 .navbar {
-    margin:0;
-    padding:0;
-    text-align:center;
-    background-color:white;
-    border:2px solid black;
-    margin-bottom: 5px;
-    border-radius:10px;
+  height: 5vh;
+  text-align:center;
+  float:right;
+  background-color: #00d4ff;
+  border:2px solid black;
+  border-radius:10px;
+  font-weight:bold;
+  margin:1%;
+  align-items: center;
+  display:flex; 
+  width:20vw;  
 }
 
+ul {
+  list-style-type: none;
+  overflow: hidden;
+  align-items:center;
+  justify-content:center;
+}
+
+li {
+  float: right;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 22px 40px;
+  text-decoration: none;
+}
+
+.windowModalBook{
+  height: 100vh;
+  display:flex;
+  margin:1%;
+}
 
 .book-window {
-    border:2px solid black;
-    border-radius:10px;
-    width:50vw;
-    height:50%;
-    background-color:white;
-    justify-content:center;
+  border:2px solid black;
+  border-radius:10px;
+  width:80vw;
+  height:80vh;
+  background-color:white;
+  justify-content:center;
+  margin:1%;
 }
 
 
-
+.modal-window{
+  border:2px solid black;
+  margin:1%;
+  background-color: white;
+  height: 40vh;
+  width: 20vw;
+  float:right;
+  border-radius:10px;
+}
 
 .book-shelf {
-    width:100%;
-    border:2px solid red;
-    height: 100%;
-    display:flex;
-    flex-wrap:wrap;
+  width:100%;
+  height:100%;
+  display:flex;
+  flex-wrap:wrap;
 }
 
 
 /* BOOK SECTION */ 
 
 .book-block {
-    height:30%;
-    width:20%;
-    background-color:grey;
-    border-radius:10px;
-    margin: 5px;
+  height:30%;
+  width:20%;
+  background-color:grey;
+  border-radius:10px;
+  margin: 5px;
 }
 
 .title {
-    font-weight:bold;
-    justify-content:center;
-    align-items:center;
-    background-color:white;
-    border-radius:10px;
-    margin: 5px;
-    display:flex;
+  font-weight:bold;
+  justify-content:center;
+  align-items:center;
+  background-color:white;
+  border-radius:10px;
+  margin: 5px;
+  display:flex;
 }
 
 .author {
-    font-weight:bold;
-    justify-content:center;
-    align-items:center;
-    background-color:white;
-    border-radius:10px;
-    margin: 5px;
-    display:flex;
+  font-weight:bold;
+  justify-content:center;
+  align-items:center;
+  background-color:white;
+  border-radius:10px;
+  margin: 5px;
+  display:flex;
 
 }
 
@@ -117,28 +169,15 @@ body {
 }
 
 .add-div{
-    
     width:50%;
     font-size:50px;
     font-weight:bold;
-    
 }
 
 
 /*MODAL SECTION*/
 /* The Modal (background) */
-.modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-  }
+
   
   /* Modal Content/Box */
   .modal-content {
@@ -148,41 +187,9 @@ body {
     border: 1px solid #888;
     width: 80%; /* Could be more or less, depending on screen size */
   }
-  
-  /* The Close Button */
-  .close {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-  }
-  
-  .close:hover,
-  .close:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
-  }
 
-
-
-
-  /* Modal Header */
-.modal-header {
-    padding: 2px 16px;
-    background-color: #5cb85c;
-    color: white;
-  }
-  
   /* Modal Body */
   .modal-body {padding: 2px 16px;}
-  
-  /* Modal Footer */
-  .modal-footer {
-    padding: 2px 16px;
-    background-color: #5cb85c;
-    color: white;
-  }
   
   /* Modal Content */
   .modal-content {
@@ -197,8 +204,4 @@ body {
     animation-duration: 0.4s
   }
   
-  /* Add Animation */
-  @keyframes animatetop {
-    from {top: -300px; opacity: 0}
-    to {top: 0; opacity: 1}
-  }
+  
