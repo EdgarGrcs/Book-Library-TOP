@@ -7,6 +7,7 @@
  */
 
 const book1 = new Book("Deep Work","Cal Newport",221,false);
+const book2 = new Book("Total Recall","Cal Newport",221,false);
 
 let myLibrary = [];
 
@@ -22,10 +23,11 @@ function addBookToLibrary(bookObject) {
  }
 
 
-function removeBook(title){
-  myLibrary = myLibrary.filter((book) => book.title !== title )
+function removeBook(book){
+  myLibrary = myLibrary.filter((book) => book !== title )
   console.log(myLibrary);
-  loopArray(myLibrary);
+  console.log("hello there");
+ 
 }
 
 
@@ -50,9 +52,9 @@ function addBookCard(book){
         statusDiv.classList.add("read-status");
         readButton.classList.add("status");
         removeButton.classList.add("remove-button");
-        removeButton.onclick = removeBook;
+        removeButton.addEventListener("click",removeBook);
 
-        titleDiv.textContent = `"${book.title}"`;
+        titleDiv.textContent = `${book.title}`;
         authorDiv.textContent = book.author;
         numPagesDiv.textContent = book.numberPages;
         statusDiv.textContent = (book.status === false ? "not read" : "read");
@@ -70,44 +72,13 @@ function addBookCard(book){
 }
 
 
-function loopArray(){
+function loopArray(array){
 
   for (let book of myLibrary){
     addBookCard(book);
   }
 }
 
-
-// Get the modal
-var modal = document.getElementById("myModal");
-
-// Get the button that opens the modal
-var btn = document.getElementById("add-div");
-
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
-
-// When the user clicks on the button, open the modal
-btn.onclick = function() {
-  modal.style.display = "block";
-}
-
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() {
-  modal.style.display = "none";
-}
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
-}
-
-
-
-
-
-
 addBookToLibrary(book1);
+addBookToLibrary(book2);
 loopArray(myLibrary);
