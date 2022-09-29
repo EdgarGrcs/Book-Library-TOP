@@ -25,10 +25,13 @@ function addBookToLibrary(bookObject) {
 
 function removeBook(book){
   myLibrary = myLibrary.filter((book) => book !== title )
-  console.log(myLibrary);
-  console.log("hello there");
+  loopArray(myLibrary);
  
 }
+
+const submitButton = document.querySelector("#submitButton");
+
+submitButton.addEventListener("click",addBook);
 
 
 // This function loops through an array which stores book objects and
@@ -46,13 +49,17 @@ function addBookCard(book){
         const removeButton = document.createElement("button");
         
         div.classList.add("book-block");
+        div.setAttribute("id",myLibrary.indexOf(book));
         titleDiv.classList.add("title");
         authorDiv.classList.add("author");
         numPagesDiv.classList.add("numPages");
         statusDiv.classList.add("read-status");
         readButton.classList.add("status");
         removeButton.classList.add("remove-button");
-        removeButton.addEventListener("click",removeBook);
+        removeButton.addEventListener("click",() => {
+          myLibrary.splice(myLibrary.indexOf(book),1);
+          loopArray(myLibrary);
+        });
 
         titleDiv.textContent = `${book.title}`;
         authorDiv.textContent = book.author;
@@ -72,7 +79,31 @@ function addBookCard(book){
 }
 
 
+function addBook() {
+  event.preventDefault();
+
+  const title = document.querySelector("#title").value;
+  const author = document.querySelector("#author").value;
+  const numPages = document.querySelector("#numPages").value;
+  const status = document.querySelector("#status");
+
+  const book = new Book(title,author,numPages,status.checked ? true : false);
+  addBookToLibrary(book);
+  loopArray(myLibrary);
+
+
+}
+
+
+
+
+
 function loopArray(array){
+
+  const bookShelf = document.querySelector(".book-shelf");
+  const bookBlock = document.querySelectorAll(".book-block");
+  bookBlock.forEach(book => bookShelf.removeChild(book));
+
 
   for (let book of myLibrary){
     addBookCard(book);
@@ -81,4 +112,5 @@ function loopArray(array){
 
 addBookToLibrary(book1);
 addBookToLibrary(book2);
+
 loopArray(myLibrary);
