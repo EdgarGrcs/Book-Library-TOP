@@ -1,10 +1,7 @@
 /*
 To do
 - correct right navbar
-- add function to remove books
-- add function to add books
 - style the book cards
-
 */ 
 
 
@@ -16,6 +13,7 @@ To do
 body {
     height: 100vh;
     width: 100%;
+    background-color:#39395f
 }
 
 .navbarWindow{
@@ -75,6 +73,7 @@ li {
   height: 100vh;
   display:flex;
   margin:1%;
+  background-color: #39395f;
 }
 
 .book-window {
@@ -91,8 +90,8 @@ li {
 .modal-window{
   border:2px solid black;
   margin:1%;
-  background-color: white;
-  height: 370px;
+  background-color:white;
+  height: 470px;
   width: 20vw;
   float:right;
   border-radius:10px;
@@ -110,12 +109,36 @@ li {
 
 .book-block {
   height:200px;
-  width:200px;
-  background-color:grey;
+  width:400px;
+  background-color:#39395f;
   border: 1px solid black;
   box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
   border-radius:10px;
   margin: 5px;
+  display:flex;
+}
+
+
+.book-block-left {
+border:2px solid red;
+height:200px;
+width:200px;
+}
+
+.imageDiv {
+  width:200px;
+  height:200px;
+  border:2px solid blue;
+  border-radius:10x;
+}
+
+.book-block-right{
+
+border:2px solid red;
+height: 200px;
+width:200px;
+
+
 }
 
 .title {
@@ -152,38 +175,50 @@ li {
 /* Build a checkmark in read status */ 
 
 .read-status {
-    font-weight:bold;
-    justify-content:center;
-    align-items:center;
-    background-color:white;
-    border-radius:10px;
-    margin: 5px;
-    display:flex;
+  font-weight:bold;
+  justify-content:center;
+  align-items:center;
+  background-color:rgb(13, 236, 13);
+  color:white;
+  border-radius:10px;
+  margin: 5px;
+  display:flex;
 }
 
-.status {
-    font-weight:bold;
-    justify-content:center;
-    align-items:center;
-    background-color:white;
-    border-radius:10px;
-    margin: 5px;
-    display:flex;
+.notRead-status{
+  font-weight:bold;
+  justify-content:center;
+  align-items:center;
+  background-color:red;
+  color:white;
+  border-radius:10px;
+  margin: 5px;
+  display:flex;
+}
+
+.statusButton {
+  font-weight:bold;
+  justify-content:center;
+  align-items:center;
+  background-color:white;
+  border-radius:10px;
+  margin: 5px;
+  display:flex;
 }
 .remove-button{
-    font-weight:bold;
-    justify-content:center;
-    align-items:center;
-    background-color:white;
-    border-radius:10px;
-    margin: 5px;
-    display:flex;
+  font-weight:bold;
+  justify-content:center;
+  align-items:center;
+  background-color:white;
+  border-radius:10px;
+  margin: 5px;
+  display:flex;
 }
 
 .add-div{
-    width:50%;
-    font-size:50px;
-    font-weight:bold;
+  width:50%;
+  font-size:50px;
+  font-weight:bold;
 }
 
 
@@ -244,6 +279,17 @@ input[type=number]:hover{
   border: 1px solid #aaa;
 }
 
+input[type=url]{
+  padding:10px;
+  margin:10px 0;
+  border-radius:10px;
+  border: 1px solid #eee;
+  transition: .3s border-color;
+}
+
+input[type=url]:hover{
+  border: 1px solid #aaa;
+}
 
 
 input[type=submit]{
