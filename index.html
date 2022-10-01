@@ -1,70 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <link rel ="stylesheet" href="styles.css">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="styles.css" />
     <script src="script.js" defer></script>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Book Library</title>
-</head>
-<body>
+  </head>
+  <body>
     <div class="window">
+      <div class="navbarWindow">
+        <div class="secondNavbar">Book Library</div>
 
-    <div class="navbarWindow">
-      <div class="secondNavbar">
-          Book Library
-      </div>
-     
-      <div class="firstNavbar">
-             
-      <div class="loginDiv">
-        Login
-      </div>
-      <div class="logoutDiv">
-        Logout
+        <div class="firstNavbar">
+          <div class="loginDiv">Login</div>
+          <div class="logoutDiv">Logout</div>
+        </div>
       </div>
 
-      
-      </div>
-    </div>
-     
-     <div class="windowModalBook">
-       <div class="book-window">
-        
-        <div class = "book-shelf">
-        
-          </div>
-            
-          
-        
-       </div> 
+      <div class="windowModalBook">
+        <div class="book-window">
+          <div class="book-shelf"></div>
+        </div>
         <div class="modal-window">
           <div id="myModal" class="modal">
-
             <div class="modal-content">
-                <div class="modal-body">
-                    <form id="form">
-                        <label for="title">Title:</label><br>
-                        <input type="text" id="title" name="title"><br>
-                        <label for="author">Author:</label><br>
-                        <input type="text" id="author" name="lname"><br>
-                        <label for="numPages">Number of Pages:</label><br>
-                        <input type="number" id="numPages" name="numPages"><br>
-                        <label for="imageLink">Image Url:</label><br>
-                        <input type="text" id="imageLink" name="imageLink" placeholder="optional"><br>
-                        <div class="checkbox-status">
-                          <label class="statusLabel" for="status">Read yet?</label><br>
-                          <input class="checkboxDiv" type="checkbox" id="status" name="status"><br><br>
-                        </div>
-                        <input type="submit" id="submitButton">
-                      </form>
-                </div>
+              <div class="modal-body">
+                <form id="form">
+                  <label for="title">Title:</label><br />
+                  <input type="text" id="title" name="title" /><br />
+                  <label for="author">Author:</label><br />
+                  <input type="text" id="author" name="lname" /><br />
+                  <label for="numPages">Number of Pages:</label><br />
+                  <input type="number" id="numPages" name="numPages" /><br />
+                  <label for="imageLink">Image Url:</label><br />
+                  <input
+                    type="text"
+                    id="imageLink"
+                    name="imageLink"
+                    placeholder="optional"
+                  /><br />
+                  <div class="checkbox-status">
+                    <label class="statusLabel" for="status">Read yet?</label
+                    ><br />
+                    <input
+                      class="checkboxDiv"
+                      type="checkbox"
+                      id="status"
+                      name="status"
+                    /><br /><br />
+                  </div>
+                  <input type="submit" id="submitButton" />
+                </form>
               </div>
+            </div>
+          </div>
         </div>
-        </div> 
       </div>
-
     </div>
-</body>
+  </body>
 </html>

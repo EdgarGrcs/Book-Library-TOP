@@ -1,45 +1,31 @@
-
-/**
- * To Do:
- * Understand the remove function and how the id of the book is connected to the DOM
- * Remove vertical gap between Book divs when there are multiple rows of books
- */
-
-const book1 = new Book("Deep Work","Cal Newport",221,false);
-const book2 = new Book("Total Recall","Cal Newport",221,false);
-
 let myLibrary = [];
+const submitButton = document.querySelector("#submitButton");
+submitButton.addEventListener("click", addBook);
 
-function Book(title,author,numberPages,status,url){
-  this.title = title
-  this.author = author
-  this.numberPages = numberPages
+function Book(title, author, numberPages, status, url) {
+  this.title = title;
+  this.author = author;
+  this.numberPages = numberPages;
   this.status = status;
   this.url = url;
 }
 
 function addBookToLibrary(bookObject) {
-    myLibrary.push(bookObject);
- }
-
-
-function removeBook(book){
-  myLibrary = myLibrary.filter((book) => book !== title )
-  loopArray(myLibrary);
- 
+  myLibrary.push(bookObject);
 }
 
-const submitButton = document.querySelector("#submitButton");
+function removeBook(book) {
+  myLibrary = myLibrary.filter((book) => book !== title);
+  loopArray(myLibrary);
+}
 
-submitButton.addEventListener("click",addBook);
 
 
 // This function loops through an array which stores book objects and
 // binds them to the DOM by iterating over the array with a while loop
 
-function addBookCard(book){
-
-  const bookShelfDiv = document.querySelector(".book-shelf"); 
+function addBookCard(book) {
+  const bookShelfDiv = document.querySelector(".book-shelf");
   const div = document.createElement("div");
   const titleDiv = document.createElement("div");
   const authorDiv = document.createElement("div");
@@ -49,25 +35,23 @@ function addBookCard(book){
   const removeButton = document.createElement("button");
   const removeButtonImage = document.createElement("img");
   const statusAndRemove = document.createElement("div");
-    
+
   const bookBlockLeft = document.createElement("div");
   const bookBlockRight = document.createElement("div");
   const imageDiv = document.createElement("img");
 
-
   div.classList.add("book-block");
 
-    
   bookBlockLeft.classList.add("book-block-left");
   imageDiv.classList.add("imageDiv");
   bookBlockRight.classList.add("book-block-right");
 
-  div.setAttribute("id",myLibrary.indexOf(book));
+  div.setAttribute("id", myLibrary.indexOf(book));
   titleDiv.classList.add("title");
   authorDiv.classList.add("author");
   numPagesDiv.classList.add("numPages");
-    
-  if (book.status){
+
+  if (book.status) {
     statusDiv.classList.add("read-status");
   } else {
     statusDiv.classList.add("notRead-status");
@@ -76,24 +60,25 @@ function addBookCard(book){
   statusAndRemove.classList.add("statusAndRemoveDiv");
   readButton.classList.add("statusButton");
   removeButton.classList.add("remove-button");
-  removeButton.addEventListener("click",() => {
-    myLibrary.splice(myLibrary.indexOf(book),1);
-    loopArray(myLibrary);
-      });
-  removeButtonImage.classList.add("removeButtonImage");    
 
-  removeButtonImage.setAttribute("src", "/bin.png" )
+  removeButton.addEventListener("click", () => {
+    myLibrary.splice(myLibrary.indexOf(book), 1);
+    loopArray(myLibrary);
+  });
+  removeButtonImage.classList.add("removeButtonImage");
+
+  removeButtonImage.setAttribute("src", "/bin.png");
   titleDiv.textContent = `"${book.title}"`;
   authorDiv.textContent = book.author;
   numPagesDiv.textContent = book.numberPages + " " + "pages";
-  statusDiv.textContent = (book.status === false ? "not read" : "read");
+  statusDiv.textContent = book.status === false ? "not read" : "read";
   readButton.textContent = "READ/UNREAD";
-  imageDiv.setAttribute("src",book.url);
+  imageDiv.setAttribute("src", book.url);
 
-  readButton.addEventListener("click",() => {
+  readButton.addEventListener("click", () => {
     book.status = !book.status;
     loopArray();
-  })
+  });
 
   bookBlockLeft.appendChild(imageDiv);
   bookBlockRight.appendChild(titleDiv);
@@ -106,7 +91,7 @@ function addBookCard(book){
   bookBlockRight.appendChild(statusAndRemove);
   div.appendChild(bookBlockLeft);
   div.appendChild(bookBlockRight);
-  bookShelfDiv.appendChild(div); 
+  bookShelfDiv.appendChild(div);
 }
 
 function addBook() {
@@ -120,21 +105,26 @@ function addBook() {
   const numPages = document.querySelector("#numPages").value;
   const status = document.querySelector("#status");
 
-  const book = new Book(title,author,numPages,status.checked ? true : false,imageUrl);
+  const book = new Book(
+    title,
+    author,
+    numPages,
+    status.checked ? true : false,
+    imageUrl
+  );
   document.getElementById("form").reset();
   addBookToLibrary(book);
   loopArray(myLibrary);
 }
 
-function loopArray(array){
+function loopArray(array) {
   const bookShelf = document.querySelector(".book-shelf");
   const bookBlock = document.querySelectorAll(".book-block");
-  bookBlock.forEach(book => bookShelf.removeChild(book));
+  bookBlock.forEach((book) => bookShelf.removeChild(book));
 
-  for (let book of myLibrary){
+  for (let book of myLibrary) {
     addBookCard(book);
   }
 }
 
 
-loopArray(myLibrary);
